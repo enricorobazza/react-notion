@@ -1,0 +1,26 @@
+.container {
+  padding: 15px;
+  background-color: #434648;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.board {
+  cursor: pointer;
+}
+
+.isDropping {
+  background-color: #ccc;
+}
+
+.task {
+  width: 100%;
+  min-height: 50px;
+  flex-grow: 1;
+  padding-left: 15px;
+}
+
+.noEvent {
+  pointer-events: none;
+}

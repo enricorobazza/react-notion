@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.board {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 5px;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: flex-start;
+}

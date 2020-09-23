@@ -1,14 +1,23 @@
 import React from 'react';
 
-const Board = ({ children, id, className }) => {
+const Board = ({
+  children,
+  id,
+  className,
+  onDrop,
+  onDragEnter,
+  onDragLeave,
+  onClick,
+}) => {
   const drop = (e) => {
     e.preventDefault();
-    const card_id = e.dataTransfer.getData('card_id');
+    const data = e.dataTransfer.getData('data');
+    if (onDrop) onDrop(data);
 
-    const card = document.getElementById(card_id);
-    card.style.display = 'block';
+    // const card = document.getElementById(data);
+    // card.style.display = 'block';
 
-    e.target.appendChild(card);
+    // e.target.appendChild(card);
   };
 
   const dragOver = (e) => {
@@ -16,7 +25,15 @@ const Board = ({ children, id, className }) => {
   };
 
   return (
-    <div id={id} onDrop={drop} onDragOver={dragOver} className={className}>
+    <div
+      id={id}
+      onDrop={drop}
+      onDragOver={dragOver}
+      className={className}
+      onDragEnter={onDragEnter}
+      onDragLeave={onDragLeave}
+      onClick={onClick}
+    >
       {children}
     </div>
   );

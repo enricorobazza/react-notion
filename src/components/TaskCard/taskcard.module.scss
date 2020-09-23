@@ -1,0 +1,60 @@
+.cardContainer {
+  padding: 8px;
+  width: 33%;
+}
+
+.card {
+  width: 100%;
+  // height: 100px;
+  height: 100%;
+  padding: 10px 10px;
+  padding-bottom: 20px;
+  background-color: #434648;
+  cursor: pointer;
+  color: white;
+  font-size: 12pt;
+}
+
+.priorityEffort {
+  margin-top: 5px;
+  display: block;
+}
+
+.priority {
+  display: inline-block;
+  padding: 0 10px;
+  border-radius: 7px;
+  font-size: 10pt;
+}
+
+.effort {
+  margin-left: 5px;
+  display: inline-block;
+  padding: 0 10px;
+  border-radius: 7px;
+  font-size: 10pt;
+}
+
+.bgRed {
+  background-color: #86534f;
+}
+
+.bgGreen {
+  background-color: rgb(84, 119, 112);
+}
+
+.bgBlue {
+  background-color: rgb(86, 112, 134);
+}
+
+.bgYellow {
+  background-color: rgb(154, 143, 74);
+}
+
+.bgPurple {
+  background-color: rgb(103, 88, 140);
+}
+
+.bgGray {
+  background-color: rgb(108, 110, 112);
+}
