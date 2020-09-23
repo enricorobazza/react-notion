@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import moment from 'moment';
-// import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+
+import Board from '../../components/Board';
+import Card from '../../components/Card';
+
+import './styles.css';
 
 const MainPage = () => {
   const [posts, setPosts] = useState([]);
@@ -41,11 +45,18 @@ const MainPage = () => {
         'Variável de ambiente com o Table Id não configurada'}
       {error && <div>ERRO!!!!!</div>}
       {loading && <div>Carregando...</div>}
-      {posts.map((post) => (
-        <div key={post.id}>
-          {post['Name']} {post['Prioridade']} {post['Esforço']}
-        </div>
-      ))}
+      <div className="flexbox">
+        <Board id="board-1" className="board">
+          {posts.map((post) => (
+            <Card key={post.id} id={post.id} className="card" draggable>
+              <div>
+                {post['Name']} {post['Prioridade']} {post['Esforço']}
+              </div>
+            </Card>
+          ))}
+        </Board>
+        <Board id="board-2" className="board"></Board>
+      </div>
     </>
   );
 };
