@@ -41,7 +41,7 @@ const HourBoard = ({ hour }) => {
         <div
           className={`${styles.noEvent} ${styles.container} ${
             isDropping && styles.isDropping
-          }`}
+          } ${Boolean(task) && styles.hasTask}`}
         >
           {formatHour(hour)}
           <div
