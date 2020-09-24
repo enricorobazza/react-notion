@@ -15,36 +15,40 @@ const TaskCard = ({ task }) => {
           <div>
             {task['Name']} <br />
             <div className={styles.priorityEffort}>
-              <div
-                className={`${styles.priority} ${
-                  task['Prioridade'].includes('1')
-                    ? styles.bgPurple
-                    : task['Prioridade'].includes('2')
-                    ? styles.bgBlue
-                    : task['Prioridade'].includes('3')
-                    ? styles.bgGray
-                    : ''
-                }`}
-              >
-                {task['Prioridade']}
-              </div>
-              <div
-                className={`${styles.effort} ${
-                  task['Esforço'].includes('5 min')
-                    ? styles.bgGreen
-                    : task['Esforço'].includes('Pouco')
-                    ? styles.bgBlue
-                    : task['Esforço'].includes('Médio')
-                    ? styles.bgYellow
-                    : task['Esforço'].includes('Muito')
-                    ? styles.bgRed
-                    : task['Esforço'].includes('Extremo')
-                    ? styles.bgPurple
-                    : ''
-                }`}
-              >
-                {task['Esforço']}
-              </div>
+              {Boolean(task['Prioridade']) && (
+                <div
+                  className={`${styles.priority} ${
+                    task['Prioridade'].includes('1')
+                      ? styles.bgPurple
+                      : task['Prioridade'].includes('2')
+                      ? styles.bgBlue
+                      : task['Prioridade'].includes('3')
+                      ? styles.bgGray
+                      : ''
+                  }`}
+                >
+                  {task['Prioridade']}
+                </div>
+              )}
+              {Boolean(task['Esforço']) && (
+                <div
+                  className={`${styles.effort} ${
+                    task['Esforço'].includes('5 min')
+                      ? styles.bgGreen
+                      : task['Esforço'].includes('Pouco')
+                      ? styles.bgBlue
+                      : task['Esforço'].includes('Médio')
+                      ? styles.bgYellow
+                      : task['Esforço'].includes('Muito')
+                      ? styles.bgRed
+                      : task['Esforço'].includes('Extremo')
+                      ? styles.bgPurple
+                      : ''
+                  }`}
+                >
+                  {task['Esforço']}
+                </div>
+              )}
             </div>
           </div>
         </Card>
