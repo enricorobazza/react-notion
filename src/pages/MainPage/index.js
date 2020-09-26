@@ -19,7 +19,7 @@ const MainPage = () => {
       try {
         let tasks = (
           await axios.get(
-            `https://notion-api.splitbee.io/v1/table/9c4ae89715754fb2bdcb938f9cfad872?v=91ec05826ad341eeaa7b14c9fe90b725`
+            `https://notion-api.splitbee.io/v1/table/${process.env.REACT_APP_TABLE_ID}`
           )
         ).data;
         tasks = tasks.filter((post) => {
